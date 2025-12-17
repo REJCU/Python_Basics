@@ -104,5 +104,5 @@ How it Works
 
     Modulo Operator (%):
         134%60=14
-        This gives you the remainder, which is the number of seconds left over (14).
+        This gives you the remainder,
 """
