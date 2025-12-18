@@ -7,11 +7,61 @@ E.g. it might print: B: 13, C: 12, D: 9, A: 4
 """
 import random
 
-answers = ["a","b","c","d"]
-
+storage = {}
 
 with open( "random_scores.txt", "w") as f:
     for x in range(100):
         line = random.choices(answers)
         f.write(str(line))
 
+with open("random_scores.txt", "r") as f:
+        contents = f.read().upper().strip()
+        
+        only_letters = [content.strip().upper() for content in contents if content.isalpha()]
+        
+        for answer in only_letters:
+            storage[answer] = storage.get(answer, 0) + 1 
+            sorted_results = sorted(storage.items(), key=lambda item: item[1], reverse=True)
+            
+
+        for letter, count in sorted_results:
+            print(f"{letter}: {count}")
+        
+
+# Filters out anything that isn't a letter
+# only_letters = [char.upper() for char in clean_answers if char.isalpha()]
+            # This sorts the dictionary items by their value (the count) in reverse order
+# sorted_results = sorted(counts.items(), key=lambda item: item[1], reverse=True)
+
+# for letter, count in sorted_results:
+#     print(f"{letter}: {count}")
+
+        # x = [x for x in contents if "A" in x]
+        # print(set(x.count()))
+        # print(len(x))
+        # print(len(contents))
+        # print(x)
+        # print(contents)
+
+
+# for answer in data:
+#     counts[answer] = counts.get(answer, 0) + 1
+# fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+# newlist = [x for x in fruits if "a" in x]
+
+# print(newlist)
+
+
+# Source - https://stackoverflow.com/a
+# Posted by newacct
+# Retrieved 2025-12-18, License - CC BY-SA 2.5
+
+# def most_common(lst):
+#     return max(set(lst), key=lst.count)
+
+
+# with open(file_name, "r") as f:
+#     contents = f.read()
+#     text_count = contents.count(word)
+#     print("Text count:", text_count)
