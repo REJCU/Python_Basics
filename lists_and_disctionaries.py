@@ -72,13 +72,32 @@ Modify the word-counting program (from File I/O)
 so that the user can enter an arbitrary number of words and it prints the number of times each of those words occurs
 """
 
-word_store = []
+word_store = {}
 
 file_name = "scores.txt"
-word = "Science"
+word = input("Enter a words: ")
 
-with open(file_name, "r") as f:
-    contents = f.read()
-    text_count = contents.count(word)
-    print("Text count:", text_count)
+with open( "random_words.txt", "w") as f:
+        f.write(word)
 
+with open("random_words.txt", "r") as rwords:
+    contents = rwords.read().split()
+    word_count = contents.count(word)
+    print("Word count: ", word_count, contents)
+
+    only_words = [content.strip().lower() for content in contents]
+    print("Only words: ", only_words)
+
+    for answer in only_words:
+        word_store[answer] = word_store.get(answer, 0) + 1
+        print("Answer: ", answer, word_store[answer])
+
+#         only_letters = [content.strip().upper() for content in contents if content.isalpha()]
+
+        # for answer in only_letters:
+        #     storage[answer] = storage.get(answer, 0) + 1
+        #     sorted_results = sorted(storage.items(), key=lambda item: item[1], reverse=True)
+
+
+#         for letter, count in sorted_results:
+#             print(f"{letter}: {count}")
