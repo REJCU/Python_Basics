@@ -5,27 +5,27 @@ The tutorial solutions contain some multiple-choice answers, so store these in a
 then write a program that prints the answers (sorted) and how frequently they occur.
 E.g. it might print: B: 13, C: 12, D: 9, A: 4
 """
-import random
+# import random
 
-storage = {}
+# storage = {}
 
-with open( "random_scores.txt", "w") as f:
-    for x in range(100):
-        line = random.choices(answers)
-        f.write(str(line))
+# with open( "random_scores.txt", "w") as f:
+#     for x in range(100):
+#         line = random.choices(answers)
+#         f.write(str(line))
 
-with open("random_scores.txt", "r") as f:
-        contents = f.read().upper().strip()
+# with open("random_scores.txt", "r") as f:
+#         contents = f.read().upper().strip()
         
-        only_letters = [content.strip().upper() for content in contents if content.isalpha()]
+#         only_letters = [content.strip().upper() for content in contents if content.isalpha()]
         
-        for answer in only_letters:
-            storage[answer] = storage.get(answer, 0) + 1 
-            sorted_results = sorted(storage.items(), key=lambda item: item[1], reverse=True)
+#         for answer in only_letters:
+#             storage[answer] = storage.get(answer, 0) + 1 
+#             sorted_results = sorted(storage.items(), key=lambda item: item[1], reverse=True)
             
 
-        for letter, count in sorted_results:
-            print(f"{letter}: {count}")
+#         for letter, count in sorted_results:
+#             print(f"{letter}: {count}")
         
 
 # Filters out anything that isn't a letter
@@ -65,3 +65,20 @@ with open("random_scores.txt", "r") as f:
 #     contents = f.read()
 #     text_count = contents.count(word)
 #     print("Text count:", text_count)
+
+
+"""
+Modify the word-counting program (from File I/O) 
+so that the user can enter an arbitrary number of words and it prints the number of times each of those words occurs
+"""
+
+word_store = []
+
+file_name = "scores.txt"
+word = "Science"
+
+with open(file_name, "r") as f:
+    contents = f.read()
+    text_count = contents.count(word)
+    print("Text count:", text_count)
+
