@@ -135,22 +135,3 @@ while user_choice != "Q":
 
     if user_choice == "Q":
         print(phone_book)
-        
-    # print(MENU)
-    # user_choice = input("What would you like to do? ").upper()
-
-# display menu
-# get choice
-# while choice != <quit option>
-#     if choice == <first option>
-#         <do first task>
-#     else if choice == <second option>
-#         <do second task>
-#     ...
-#     else if choice == <n-th option>
-#         <do n-th task>
-#     else
-#         display invalid input error message
-#     display menu
-#     get choice
-# <do final thing, if needed>
