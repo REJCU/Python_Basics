@@ -94,7 +94,8 @@ so that the user can enter an arbitrary number of words and it prints the number
 
 
 """
-Write a program to store your phone book in a dictionary. Give the user choices (menu) for adding, deleting, modifying and searching for entries.
+Write a program to store your phone book in a dictionary. 
+Give the user choices (menu) for adding, deleting, modifying and searching for entries.
 """
 
 phone_book = {}
@@ -120,15 +121,23 @@ while user_choice != "Q":
         else:
             print("Sorry, that user does not exist.")
 
-
     if user_choice == "M":
-        pass
+        modify_user = input("Modify: ")
+        if modify_user in phone_book:
+            new_number = input("Phone number: ")
+            phone_book.update({modify_user:new_number})
+            print(phone_book)
+
     if user_choice == "S":
-        pass
+        search_user = input("search User: ")
+        if search_user in phone_book:
+            print(f"Here is {search_user, phone_book[search_user]}")
+
     if user_choice == "Q":
-        break
-    print(MENU)
-    user_choice = input("What would you like to do? ").upper()
+        print(phone_book)
+        
+    # print(MENU)
+    # user_choice = input("What would you like to do? ").upper()
 
 # display menu
 # get choice
