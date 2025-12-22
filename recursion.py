@@ -24,10 +24,26 @@ Write a recursive function that displays all of the letters in a string.
 (Each function call displays one letter.)
 """
 
-def make_letter_string(x):
-    print(x)
-    if 
+# def make_letter_string(x):
+#     # print(x)
+#     if x == '':
+#         return x 
+#     else:
+#         print(x[0])
+#         make_letter_string(x[1:])
 
 
-user_submitt = input("Word: ")
-make_letter_string()
+# user_submitt = str(input("Word: "))
+# make_letter_string(user_submitt)
+
+"""
+Write a program that prints a string from the outside in, using recursion.
+E.g. if the string to print is "Programming", 
+your program should print: "P g r n o i g m r m a".
+"""
+
+def outside_in(x):
+    if x == '':
+        return x 
+    else:
+        
