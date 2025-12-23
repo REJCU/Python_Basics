@@ -25,16 +25,15 @@ Write a recursive function that displays all of the letters in a string.
 """
 
 # def make_letter_string(x):
-#     # print(x)
-#     if x == '':
-#         return x 
-#     else:
-#         print(x[0])
-#         make_letter_string(x[1:])
-
+     # print(x)
+    # if x == '':
+    #     return x 
+    # else:
+    #     print(x[0])
+    #     make_letter_string(x[1:])
 
 # user_submitt = str(input("Word: "))
-# make_letter_string(user_submitt)
+# make_letter_string("Hello")
 
 """
 Write a program that prints a string from the outside in, using recursion.
@@ -43,7 +42,14 @@ your program should print: "P g r n o i g m r m a".
 """
 
 def outside_in(x):
+    print(x)
     if x == '':
-        return x 
+       return  
     else:
+        print(x[0], x[-1],end=" ")
+        outside_in(x[1:-1])
         
+
+
+outside_in("Programming")
+
