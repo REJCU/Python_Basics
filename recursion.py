@@ -41,15 +41,27 @@ E.g. if the string to print is "Programming",
 your program should print: "P g r n o i g m r m a".
 """
 
-def outside_in(x):
-    print(x)
-    if x == '':
-       return  
-    else:
-        print(x[0], x[-1],end=" ")
-        outside_in(x[1:-1])
+# def outside_in(x):
+#     print(x)
+#     if x == '':
+#        return  
+#     else:
+#         print(x[0], x[-1],end=" ")
+#         outside_in(x[1:-1])
         
+# outside_in("Programming")
 
 
-outside_in("Programming")
+"""
+Write a recursive function to determine if a string 
+is a palindrome 
+(e.g. hannah is a palindrome, but han is not).
+"""
+ 
+# def is_palindrone(x):
+#     if x == '':
+#         return 
+#     else:
+#         is_palindrone(x, 0, len(x) - 1) 
 
+# is_palindrone("momo")
